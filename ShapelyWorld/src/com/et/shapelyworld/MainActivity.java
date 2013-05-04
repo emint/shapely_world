@@ -1,23 +1,23 @@
 package com.et.shapelyworld;
 
+import roboguice.activity.RoboActivity;
+import android.opengl.GLSurfaceView;
 import android.os.Bundle;
-import android.app.Activity;
-import android.view.Menu;
 
-public class MainActivity extends Activity {
+import com.google.inject.Inject;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
+/**
+ * The entry point for our application; sets up our game's main GLSurface.
+ */
+public class MainActivity extends RoboActivity {
 
+  @Inject
+  GLSurfaceView surfaceView;
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-    
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    setContentView(surfaceView);
+  }
 }

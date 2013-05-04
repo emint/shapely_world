@@ -1,1 +1,9 @@
 .metadata
+project.properties
+.classpath
+.settings
+.project
+ShapelyWorld/gen
+ShapelyWorld/bin
+ShapelyWorld/libs
+proguard-project.txt
