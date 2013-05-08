@@ -2,6 +2,7 @@ package com.et.shapelyworld;
 
 import javax.inject.Singleton;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.opengl.GLSurfaceView;
 
@@ -12,6 +13,7 @@ import com.google.inject.Provider;
  * The main GLSurfaceView of the game. Responsible for setting-up the parameters
  * and registering the proper renderer.
  */
+@SuppressLint("ViewConstructor")
 public class MainGLSurfaceView extends GLSurfaceView {
 
   @Inject
