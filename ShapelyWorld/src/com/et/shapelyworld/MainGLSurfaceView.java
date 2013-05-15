@@ -15,13 +15,13 @@ import com.google.inject.Provider;
  */
 @SuppressLint("ViewConstructor")
 public class MainGLSurfaceView extends GLSurfaceView {
-
+  
   @Inject
   @Singleton
   public MainGLSurfaceView(Provider<Context> contextProvider,
       GLSurfaceView.Renderer renderer) {
     super(contextProvider.get());
-
+    
     setEGLContextClientVersion(2);
     setRenderer(renderer);
     setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);

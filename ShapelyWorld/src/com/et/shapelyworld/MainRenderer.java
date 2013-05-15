@@ -1,16 +1,22 @@
 package com.et.shapelyworld;
 
+import javax.inject.Inject;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 
+import com.et.util.shaders.Shader;
+import com.et.util.shaders.annotation.SimpleShader;
+
 /**
  * Takes care of calling the appropriate renderers to render content on screen.
  */
 public class MainRenderer implements GLSurfaceView.Renderer {
-
+  
+  @Inject @SimpleShader Shader shader;
+  
   public void onSurfaceCreated(GL10 unused, EGLConfig config) {
     GLES20.glClearColor(0.5f, 0.0f, 0.0f, 1.0f);
   }

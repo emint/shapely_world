@@ -12,7 +12,7 @@ public class MainActivity extends RoboActivity {
 
   @Inject
   GLSurfaceView surfaceView;
- 
+  
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);

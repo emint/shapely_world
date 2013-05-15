@@ -16,12 +16,19 @@ public interface Shader {
   boolean isCompiled();
   
   /**
+   * Starts the compilation process. We have to control this since we need to ensure it is
+   * done on the OpenGL Thread.
+   */
+  void compile(); 
+  
+  /**
    * Returns a reason for error if shader was not compiled or empty string.
    */
   String getError();
   
   /**
-   * Returns the shader code that was loaded.
+   * Returns the vertex and fragment shader code that was loaded.
    */
-  String getShaderCode();
+  String getVertexShaderCode();
+  String getFragmentShaderCode();
 }

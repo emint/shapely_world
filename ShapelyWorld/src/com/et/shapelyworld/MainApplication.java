@@ -4,6 +4,7 @@ import roboguice.RoboGuice;
 import android.app.Application;
 
 import com.et.util.assetreader.AssetReaderModule;
+import com.et.util.glesdriver.GLESDriverModule;
 import com.et.util.shaders.ShaderModule;
 
 /**
@@ -18,6 +19,7 @@ public class MainApplication extends Application {
         RoboGuice.newDefaultRoboModule(this), 
         new AssetReaderModule(),
         new MainModule(),
+        new GLESDriverModule(),
         new ShaderModule());
   }
 }

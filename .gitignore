@@ -3,6 +3,8 @@ project.properties
 .classpath
 .settings
 .project
+.cproject
+obj/
 ShapelyWorld/gen
 ShapelyWorld/bin
 ShapelyWorld/libs
