@@ -7,5 +7,4 @@ project.properties
 obj/
 ShapelyWorld/gen
 ShapelyWorld/bin
-ShapelyWorld/libs
 proguard-project.txt
