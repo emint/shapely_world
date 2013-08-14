@@ -36,7 +36,7 @@ public class MainRenderer implements GLSurfaceView.Renderer {
   
   public void onSurfaceCreated(GL10 unused, EGLConfig config) {
     GLES20.glClearColor(0.5f, 0.0f, 0.0f, 1.0f);
-    InputStream meshObjStream = context.getResources().openRawResource(R.raw.simpletri);
+    InputStream meshObjStream = context.getResources().openRawResource(R.raw.cubeobj);
     meshObj = objParser.parse(new ResourceObjFile(meshObjStream));
     Log.i("mesh", "" + meshObj.getAllMeshes().size());
     for (MeshData data : meshObj.getAllMeshes()) {
@@ -59,8 +59,8 @@ public class MainRenderer implements GLSurfaceView.Renderer {
     // Get all the data
     int vPosHandle = GLES20.glGetAttribLocation(shader.getProgramId(), "vPosition");
     Log.i("errors?!", "" + (vPosHandle == -1));
-    FloatBuffer verticies = meshObj.getMesh("SimpleTri").getVerticesForAndroid();
-    IntBuffer vIndices = meshObj.getMesh("SimpleTri").getVertIndicesForAndroid();
+    FloatBuffer verticies = meshObj.getMesh("Cube").getVerticesForAndroid();
+    IntBuffer vIndices = meshObj.getMesh("Cube").getVertIndicesForAndroid();
     
     Log.i("vert", verticies.toString());
     GLES20.glEnableVertexAttribArray(vPosHandle);
@@ -69,7 +69,8 @@ public class MainRenderer implements GLSurfaceView.Renderer {
     Log.i("errors?!", GLU.gluErrorString(GLES20.glGetError()));
     
     // Draw!
-    GLES20.glDrawElements(GLES20.GL_TRIANGLES, 3, GLES20.GL_UNSIGNED_INT, vIndices);
+    GLES20.glDrawElements(GLES20.GL_TRIANGLES, vIndices.capacity(), GLES20.GL_UNSIGNED_INT,
+        vIndices);
     Log.i("errors?!", GLU.gluErrorString(GLES20.glGetError()));
     
     // Reset the buffers
