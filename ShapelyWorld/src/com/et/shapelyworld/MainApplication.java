@@ -5,6 +5,7 @@ import android.app.Application;
 
 import com.et.util.assetreader.AssetReaderModule;
 import com.et.util.glesdriver.GLESDriverModule;
+import com.et.util.mesh.fileparser.MeshFileParserModule;
 import com.et.util.shaders.ShaderModule;
 
 /**
@@ -19,6 +20,7 @@ public class MainApplication extends Application {
         RoboGuice.newDefaultRoboModule(this), 
         new AssetReaderModule(),
         new MainModule(),
+        new MeshFileParserModule(),
         new GLESDriverModule(),
         new ShaderModule());
   }
